@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kifolie · Restaurant tunisien à Belleville, Paris 20e</title>
+<meta name="description" content="Kifolie, restaurant tunisien au 112 Boulevard de Belleville (Paris 20e) : sandwiches généreux, burgers, grillades et formules express, sur place, à emporter ou en livraison.">
+<meta name="theme-color" content="#141210">
+<link rel="canonical" href="https://kifolie.vercel.app/">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Kifolie · Restaurant tunisien à Belleville">
+<meta property="og:description" content="Sandwiches gourmands, burgers généreux et formules express servis chaud à Paris 20e.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80&auto=format&fit=crop">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141210'/%3E%3Cpath d='M20 14v36M20 34l18-20M26 30l14 20' stroke='%23ff6a1f' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coal: { 950: '#0d0b0a', 900: '#141210', 800: '#1c1916', 700: '#26221e', 600: '#36302a' },
+          fire: { 500: '#ff4d1f', 400: '#ff6a1f' },
+          amber: { 400: '#ffab3d', 300: '#ffc46b' },
+          gold: { 300: '#e9c77b', 400: '#d4a648' },
+          cream: '#fbf6ee'
+        },
+        fontFamily: {
+          display: ['Anton', 'Impact', 'sans-serif'],
+          sans: ['Manrope', 'system-ui', 'sans-serif'],
+          hand: ['Caveat', 'cursive']
+        }
+      }
+    }
+  }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Kifolie",
+  "description": "Restaurant tunisien : sandwiches, burgers, grillades et formules express, sur place et à emporter.",
+  "servesCuisine": ["Tunisienne", "Casher", "Grillades", "Sandwiches"],
+  "telephone": "+33147975313",
+  "url": "https://kifolie.vercel.app/",
+  "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80&auto=format&fit=crop",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "112 Boulevard de Belleville",
+    "postalCode": "75020",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 48.8712, "longitude": 2.3788 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "10:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "15:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "22:30" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "3.8", "bestRating": "5", "reviewCount": "365" },
+  "acceptsReservations": false,
+  "hasMenu": "https://kifolie.vercel.app/#carte"
+}
+</script>
+<style>
+  :root {
+    --coal: #141210; --coal-2: #1c1916; --line: rgba(255,214,160,.12);
+    --fire: #ff4d1f; --amber: #ffab3d; --gold: #e9c77b; --cream: #fbf6ee;
+    --mx: 0; --my: 0; --sy: 0;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { background: var(--coal); color: var(--cream); font-family: Manrope, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background: var(--fire); color: #fff; }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 10px; }
+
+  /* grain */
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .06; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  .font-display { letter-spacing: .01em; line-height: .9; }
+  .text-fire { background: linear-gradient(100deg, #ff4d1f 0%, #ff8a2b 45%, #ffc46b 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stroke-text { -webkit-text-stroke: 1.5px rgba(255,171,61,.22); color: transparent; }
+
+  /* glass */
+  .glass { background: linear-gradient(160deg, rgba(40,34,29,.72), rgba(20,18,16,.6)); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid var(--line); box-shadow: inset 0 1px 0 rgba(255,220,170,.06), 0 20px 50px -20px rgba(0,0,0,.7); }
+  .glow { position: relative; isolation: isolate; }
+  .glow::after { content: ""; position: absolute; inset: -1px; border-radius: inherit; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .4s;
+    background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,140,40,.35), transparent 45%); }
+  .glow:hover::after { opacity: 1; }
+
+  /* header */
+  #hdr { transition: background .3s, border-color .3s, transform .35s; }
+  #hdr.scrolled { background: rgba(13,11,10,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--line); }
+  .navlink { position: relative; }
+  .navlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px; background: var(--fire); transform: scaleX(0); transform-origin: left; transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+  .navlink:hover::after, .navlink.active::after { transform: scaleX(1); }
+  .navlink.active { color: #fff; }
+
+  /* buttons */
+  .btn-fire { position: relative; overflow: hidden; background: linear-gradient(135deg, #ff4d1f, #ff7a1f); color: #fff; box-shadow: 0 10px 30px -10px rgba(255,77,31,.8), inset 0 1px 0 rgba(255,255,255,.25); transition: transform .2s, box-shadow .2s; }
+  .btn-fire::before { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%); transform: translateX(-120%); transition: transform .6s; }
+  .btn-fire:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(255,77,31,.95), inset 0 1px 0 rgba(255,255,255,.3); }
+  .btn-fire:hover::before { transform: translateX(120%); }
+  .btn-fire:active { transform: translateY(0) scale(.98); }
+  .btn-ghost { border: 1px solid rgba(255,214,160,.22); transition: background .2s, border-color .2s, transform .2s; }
+  .btn-ghost:hover { background: rgba(255,171,61,.08); border-color: rgba(255,171,61,.5); transform: translateY(-2px); }
+
+  /* hero parallax */
+  .hero-bg { position: absolute; inset: -8% -4%; background-size: cover; background-position: center; transform: translate3d(calc(var(--mx) * -14px), calc(var(--sy) * .35px + var(--my) * -10px), 0) scale(1.08); will-change: transform; filter: saturate(1.1) contrast(1.05); }
+  .layer { will-change: transform; transition: transform .12s linear; }
+  .float-card { transform-style: preserve-3d; }
+  .float-card img { transform: translateZ(30px); }
+  @keyframes bob { 0%,100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+  .bob { animation: bob 6s ease-in-out infinite; }
+  .bob-2 { animation: bob 7.5s ease-in-out -2s infinite; }
+  .bob-3 { animation: bob 5.5s ease-in-out -4s infinite; }
+
+  /* embers */
+  #embers { position: absolute; inset: 0; pointer-events: none; }
+
+  /* marquee */
+  @keyframes marq { to { transform: translateX(-50%); } }
+  .marquee { animation: marq 32s linear infinite; }
+
+  /* tilt */
+  .tilt { transform-style: preserve-3d; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .4s; }
+  .tilt.is-tilting { transition: transform .08s linear, box-shadow .4s; }
+  .tilt:hover { box-shadow: 0 30px 60px -25px rgba(255,90,30,.45), 0 0 0 1px rgba(255,171,61,.25); }
+  .tilt .pop { transform: translateZ(40px); }
+  .tilt .pop-sm { transform: translateZ(24px); }
+  .tilt .shine { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s;
+    background: radial-gradient(300px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,220,170,.18), transparent 50%); }
+  .tilt:hover .shine { opacity: 1; }
+  .dish-img { background: radial-gradient(circle at 50% 60%, #3a2a1c, #171310); }
+  .dish-img img { transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+  .tilt:hover .dish-img img { transform: scale(1.08); }
+
+  /* tabs */
+  .tab { transition: color .25s, background .25s, transform .2s; }
+  .tab:hover { transform: translateY(-2px); }
+  .tab[aria-selected="true"] { color: #fff; }
+  #tabInk { transition: transform .45s cubic-bezier(.2,.8,.2,1), width .45s cubic-bezier(.2,.8,.2,1); }
+  .tab-ico { transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+  .tab:hover .tab-ico, .tab[aria-selected="true"] .tab-ico { transform: rotate(-12deg) scale(1.15); }
+  @keyframes cardIn { from { opacity: 0; transform: perspective(900px) translateY(26px) rotateX(10deg); } to { opacity: 1; transform: perspective(900px) translateY(0) rotateX(0); } }
+  .card-in { animation: cardIn .6s cubic-bezier(.2,.8,.2,1) both; }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* parallax strip */
+  .strip-img { position: absolute; inset: -20% 0; background-size: cover; background-position: center; will-change: transform; }
+
+  /* form */
+  .field { background: rgba(255,240,220,.04); border: 1px solid rgba(255,214,160,.14); border-radius: 14px; color: var(--cream); transition: border-color .2s, background .2s, box-shadow .2s; }
+  .field::placeholder { color: rgba(251,246,238,.35); }
+  .field:focus { outline: none; border-color: var(--amber); background: rgba(255,171,61,.06); box-shadow: 0 0 0 4px rgba(255,171,61,.12); }
+  .field[aria-invalid="true"] { border-color: #ff5a4a; }
+  select.field option { background: #1c1916; }
+  input[type="date"].field::-webkit-calendar-picker-indicator { filter: invert(.8) sepia(1) hue-rotate(-20deg); cursor: pointer; }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg label { transition: background .25s, color .25s, border-color .25s, transform .2s; }
+  .seg input:checked + label { background: linear-gradient(135deg, rgba(255,77,31,.22), rgba(255,171,61,.12)); border-color: rgba(255,120,40,.7); color: #fff; }
+  .seg input:focus-visible + label { outline: 2px solid var(--amber); outline-offset: 2px; }
+  .qty button { transition: background .2s, transform .15s; }
+  .qty button:hover { background: rgba(255,106,31,.2); }
+  .qty button:active { transform: scale(.9); }
+  .pick-row { transition: background .2s, border-color .2s; }
+  .pick-row.has { border-color: rgba(255,120,40,.55); background: rgba(255,106,31,.06); }
+  .slot input { position: absolute; opacity: 0; pointer-events: none; }
+  .slot label { transition: all .2s; }
+  .slot input:checked + label { background: #ff5a1f; border-color: #ff5a1f; color: #fff; }
+  .slot input:focus-visible + label { outline: 2px solid var(--amber); outline-offset: 2px; }
+  .slot input:disabled + label { opacity: .3; cursor: not-allowed; text-decoration: line-through; }
+
+  /* carousel */
+  #revTrack { transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+  .dot { transition: width .35s, background .35s; }
+
+  /* toast */
+  #toast { transition: opacity .3s, transform .35s cubic-bezier(.2,.8,.2,1); }
+
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none { scrollbar-width: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-fire-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Aller au contenu</a>
+
+<!-- ========== HEADER ========== -->
+<header id="hdr" class="fixed top-0 inset-x-0 z-50 border-b border-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-4">
+    <a href="#accueil" class="flex items-center gap-3 group" aria-label="Kifolie, retour en haut">
+      <span class="relative grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-fire-500 to-amber-400 shadow-[0_8px_24px_-8px_rgba(255,77,31,.9)] transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-105">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-coal-950" fill="currentColor" aria-hidden="true"><path d="M12 2c.6 3.2-1.8 4.6-1.8 7.2 0 1.3.9 2.3 2.1 2.3 1.6 0 2.3-1.5 2-3.4 2.4 1.7 3.7 4.2 3.7 6.8A6 6 0 0 1 12 21a6 6 0 0 1-6-6c0-4.6 4.3-6.7 6-13Z"/></svg>
+      </span>
+      <span class="leading-none">
+        <span class="block font-display text-[26px] tracking-wide">KIFOLIE</span>
+        <span class="hidden sm:block text-[10px] font-bold uppercase tracking-[.22em] text-gold-300/80 mt-0.5">Belleville · Paris 20e</span>
+      </span>
+    </a>
+    <span class="hidden md:inline-flex items-center gap-1.5 rounded-full border border-gold-300/30 bg-gold-300/[.07] px-3 py-1 text-[11px] font-bold uppercase tracking-[.16em] text-gold-300">
+      <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+      Restauration Casher
+    </span>
+    <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-8 text-sm font-semibold text-cream/70">
+      <a class="navlink hover:text-white" href="#carte">La Carte</a>
+      <a class="navlink hover:text-white" href="#commander">Commander</a>
+      <a class="navlink hover:text-white" href="#avis">Avis</a>
+      <a class="navlink hover:text-white" href="#contact">Accès</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="#commander" class="btn-fire hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-extrabold">
+        Commander en ligne
+        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button id="burger" class="lg:hidden grid place-items-center w-11 h-11 rounded-xl btn-ghost" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mnav">
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mnav" aria-label="Navigation mobile" class="lg:hidden hidden border-t border-white/5 bg-coal-950/95 backdrop-blur-xl">
+    <div class="px-4 py-4 grid gap-1 text-lg font-bold">
+      <a class="py-3 px-3 rounded-xl hover:bg-white/5" href="#carte">La Carte</a>
+      <a class="py-3 px-3 rounded-xl hover:bg-white/5" href="#commander">Commander</a>
+      <a class="py-3 px-3 rounded-xl hover:bg-white/5" href="#avis">Avis</a>
+      <a class="py-3 px-3 rounded-xl hover:bg-white/5" href="#contact">Accès & horaires</a>
+      <a class="btn-fire mt-2 text-center rounded-2xl py-3.5" href="#commander">Commander en ligne</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<!-- ========== HERO ========== -->
+<section id="accueil" class="relative min-h-[100svh] overflow-hidden flex items-center pt-[72px]" aria-label="Accueil">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1800&q=75&auto=format&fit=crop')" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,rgba(20,18,16,.25),rgba(13,11,10,.92)_65%)]" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-coal-900 via-coal-900/40 to-coal-950/70" aria-hidden="true"></div>
+  <canvas id="embers" aria-hidden="true"></canvas>
+
+  <div class="absolute -bottom-6 left-0 right-0 font-display text-[22vw] leading-none stroke-text select-none whitespace-nowrap text-center layer" data-depth="-0.2" aria-hidden="true">KIFOLIE</div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-[1.1fr_.9fr] gap-12 items-center py-14 lg:py-0">
+    <div>
+      <div class="inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-xs font-bold mb-7">
+        <span id="openDot" class="relative flex h-2.5 w-2.5"><span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span></span>
+        <span id="openText">Chargement des horaires…</span>
+      </div>
+      <h1 class="font-display uppercase text-[clamp(3.1rem,8.6vw,7.4rem)]">
+        <span class="text-fire">Kifolie</span><br>Restaurant tunisien <span class="relative inline-block">à Belleville.
+          <svg class="absolute -bottom-3 left-0 w-full h-4 text-fire-500" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11C70 3 160 2 297 8" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+        </span>
+      </h1>
+      <p class="mt-8 max-w-xl text-lg sm:text-xl text-cream/75 leading-relaxed">Sandwiches gourmands, burgers généreux et formules express servis chaud à Paris 20e.</p>
+      <ul class="mt-7 flex flex-wrap gap-2.5 text-sm font-bold" aria-label="Nos atouts">
+        <li class="glass rounded-full px-4 py-2 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>Service rapide</li>
+        <li class="glass rounded-full px-4 py-2 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 8h12l-1 13H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Sur place & à emporter</li>
+        <li class="glass rounded-full px-4 py-2 inline-flex items-center gap-2"><svg viewBox="0 0 24 24" class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>112 Bd de Belleville</li>
+      </ul>
+      <div class="mt-10 flex flex-wrap items-center gap-3">
+        <a href="#commander" class="btn-fire inline-flex items-center gap-2.5 rounded-full px-7 py-4 text-base font-extrabold">
+          Commander maintenant
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#carte" class="btn-ghost inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-bold">Voir la carte</a>
+        <a href="tel:+33147975313" class="inline-flex items-center gap-2 px-3 py-4 text-sm font-bold text-cream/70 hover:text-amber-300 transition-colors">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          01 47 97 53 13
+        </a>
+      </div>
+    </div>
+
+    <!-- floating 3D food stack -->
+    <div id="heroStack" class="relative h-[420px] sm:h-[520px] hidden md:block" style="perspective:1200px" aria-hidden="true">
+      <div class="layer absolute right-[6%] top-[4%] w-[66%] aspect-[4/5]" data-depth="0.6">
+        <div class="float-card bob w-full h-full rounded-[28px] overflow-hidden glass p-2 rotate-[4deg]">
+          <img class="w-full h-full object-cover rounded-[22px]" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=75&auto=format&fit=crop" alt="" fetchpriority="high">
+        </div>
+      </div>
+      <div class="layer absolute left-0 bottom-[6%] w-[46%] aspect-square" data-depth="1.1">
+        <div class="float-card bob-2 w-full h-full rounded-[26px] overflow-hidden glass p-2 -rotate-[7deg]">
+          <img class="w-full h-full object-cover rounded-[20px]" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=75&auto=format&fit=crop" alt="">
+        </div>
+      </div>
+      <div class="layer absolute right-0 bottom-0 glass rounded-2xl px-5 py-4" data-depth="1.5">
+        <div class="bob-3">
+          <div class="flex items-center gap-1 text-amber-400" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="m12 2 3 6.6 7 .7-5.3 4.8 1.6 7L12 17.5 5.7 21l1.6-7L2 9.3l7-.7Z"/></svg>
+            <span class="font-display text-2xl text-cream ml-1">3,8</span><span class="text-cream/50 text-sm font-semibold">/5</span>
+          </div>
+          <p class="text-xs font-semibold text-cream/60 mt-1">365 avis Google</p>
+        </div>
+      </div>
+      <div class="layer absolute left-[8%] top-[6%] font-hand text-3xl text-amber-300 -rotate-6" data-depth="0.9">servi chaud !
+        <svg viewBox="0 0 80 40" class="w-16 h-8 ml-10 text-amber-300" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6c20 4 40 14 56 28M60 34l-2-12M60 34l-12-1"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <a href="#carte" class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-[11px] font-bold uppercase tracking-[.25em] text-cream/50 hover:text-amber-300 transition-colors" aria-label="Défiler vers la carte">
+    Défiler
+    <span class="w-6 h-10 rounded-full border-2 border-current grid justify-center pt-1.5"><span class="w-1 h-2 rounded-full bg-current animate-bounce"></span></span>
+  </a>
+</section>
+
+<!-- marquee -->
+<div class="relative bg-fire-500 text-coal-950 -rotate-1 scale-[1.02] py-3 overflow-hidden border-y-2 border-coal-950" aria-hidden="true">
+  <div class="marquee flex w-max gap-10 font-display text-2xl uppercase whitespace-nowrap">
+    <span>Pain chaud</span><span>✸</span><span>Viandes marinées</span><span>✸</span><span>Sauces maison</span><span>✸</span><span>Frites croustillantes</span><span>✸</span><span>Plaque chaude</span><span>✸</span><span>100 % casher</span><span>✸</span>
+    <span>Pain chaud</span><span>✸</span><span>Viandes marinées</span><span>✸</span><span>Sauces maison</span><span>✸</span><span>Frites croustillantes</span><span>✸</span><span>Plaque chaude</span><span>✸</span><span>100 % casher</span><span>✸</span>
+  </div>
+</div>
+
+<!-- ========== CARTE ========== -->
+<section id="carte" class="relative py-24 sm:py-32" aria-labelledby="carteTitle">
+  <div class="absolute top-20 -left-40 w-[480px] h-[480px] rounded-full bg-fire-500/10 blur-[120px] pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+      <div>
+        <p class="font-hand text-3xl text-amber-400 -rotate-2 mb-3">ça se mange chaud</p>
+        <h2 id="carteTitle" class="font-display uppercase text-[clamp(2.8rem,6vw,5rem)]">La Carte <span class="text-fire">&</span> nos menus</h2>
+      </div>
+      <p class="max-w-md text-cream/65 leading-relaxed">Tout est préparé à la minute, sur la plaque, devant vous. Passez la souris sur un plat, ajoutez-le à votre commande en un clic.</p>
+    </div>
+
+    <div class="relative mb-10 reveal">
+      <div id="tabs" role="tablist" aria-label="Catégories de la carte" class="relative inline-flex max-w-full overflow-x-auto scrollbar-none glass rounded-2xl p-1.5 gap-1"></div>
+    </div>
+
+    <div id="menuGrid" role="tabpanel" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <p class="mt-8 text-xs text-cream/40">Prix indicatifs TTC, susceptibles d'évoluer. Toutes nos viandes sont certifiées casher. Allergènes : demandez à l'équipe.</p>
+  </div>
+</section>
+
+<!-- parallax strip -->
+<section class="relative h-[52vh] min-h-[340px] overflow-hidden" aria-label="L'ambiance Kifolie">
+  <div class="strip-img" data-speed="0.25" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1800&q=70&auto=format&fit=crop')" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-coal-900 via-coal-900/60 to-coal-900/20" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-coal-900 via-transparent to-coal-900" aria-hidden="true"></div>
+  <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center">
+    <div class="reveal max-w-2xl">
+      <p class="font-display uppercase text-[clamp(2.4rem,6vw,4.8rem)]">La plaque chauffe <span class="text-fire">dès 10h.</span></p>
+      <p class="mt-4 text-cream/70 text-lg max-w-lg">Viandes marinées la veille, pains toastés au moment, sauces faites maison. Belleville mérite ça.</p>
+      <dl class="mt-8 grid grid-cols-3 gap-4 max-w-md">
+        <div><dt class="text-xs font-bold uppercase tracking-widest text-cream/50">Prêt en</dt><dd class="font-display text-4xl text-amber-300">~10 min</dd></div>
+        <div><dt class="text-xs font-bold uppercase tracking-widest text-cream/50">Avis</dt><dd class="font-display text-4xl text-amber-300">365</dd></div>
+        <div><dt class="text-xs font-bold uppercase tracking-widest text-cream/50">Casher</dt><dd class="font-display text-4xl text-amber-300">100 %</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMMANDE ========== -->
+<section id="commander" class="relative py-24 sm:py-32" aria-labelledby="orderTitle">
+  <div class="absolute right-0 top-40 w-[520px] h-[520px] rounded-full bg-amber-400/10 blur-[130px] pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+    <div class="mb-12 reveal">
+      <p class="font-hand text-3xl text-amber-400 -rotate-2 mb-3">en 3 clics, c'est réglé</p>
+      <h2 id="orderTitle" class="font-display uppercase text-[clamp(2.6rem,6vw,5rem)]">Commander <span class="text-fire">à emporter</span><br class="hidden sm:block"> ou en livraison</h2>
+      <p class="mt-4 max-w-xl text-cream/65">Composez votre commande, choisissez votre créneau : on reçoit tout sur WhatsApp et on vous confirme rapidement.</p>
+    </div>
+
+    <form id="orderForm" class="grid lg:grid-cols-[1fr_380px] gap-6 items-start" novalidate>
+      <div class="grid gap-6">
+        <!-- step 1 -->
+        <fieldset class="glass glow rounded-3xl p-5 sm:p-7 reveal">
+          <legend class="sr-only">Type de commande</legend>
+          <div class="flex items-center gap-3 mb-5"><span class="grid place-items-center w-8 h-8 rounded-full bg-fire-500 font-display text-lg">1</span><h3 class="font-display uppercase text-2xl tracking-wide">Type de commande</h3></div>
+          <div class="seg grid grid-cols-2 gap-3">
+            <div class="relative"><input type="radio" name="type" id="t-emp" value="À emporter" checked><label for="t-emp" class="flex items-center gap-3 cursor-pointer rounded-2xl border border-white/10 p-4 hover:-translate-y-0.5">
+              <svg viewBox="0 0 24 24" class="w-7 h-7 text-amber-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8h12l-1 13H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+              <span><span class="block font-extrabold">À emporter</span><span class="text-xs text-cream/55">Retrait au 112 Bd de Belleville</span></span></label></div>
+            <div class="relative"><input type="radio" name="type" id="t-liv" value="Livraison"><label for="t-liv" class="flex items-center gap-3 cursor-pointer rounded-2xl border border-white/10 p-4 hover:-translate-y-0.5">
+              <svg viewBox="0 0 24 24" class="w-7 h-7 text-amber-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h6l-3-8H8M15 9h3l2.5 5"/></svg>
+              <span><span class="block font-extrabold">Livraison</span><span class="text-xs text-cream/55">Paris 20e & alentours</span></span></label></div>
+          </div>
+          <div id="addrWrap" class="hidden mt-4">
+            <label for="addr" class="block text-sm font-bold mb-2">Adresse de livraison <span class="text-fire-400">*</span></label>
+            <input id="addr" name="addr" class="field w-full px-4 py-3.5" placeholder="N°, rue, code postal, étage / code…" autocomplete="street-address">
+          </div>
+        </fieldset>
+
+        <!-- step 2 -->
+        <fieldset class="glass glow rounded-3xl p-5 sm:p-7 reveal">
+          <legend class="sr-only">Plats et boissons</legend>
+          <div class="flex items-center justify-between gap-3 mb-5">
+            <div class="flex items-center gap-3"><span class="grid place-items-center w-8 h-8 rounded-full bg-fire-500 font-display text-lg">2</span><h3 class="font-display uppercase text-2xl tracking-wide">Votre faim</h3></div>
+          </div>
+          <div id="pickTabs" class="flex gap-2 overflow-x-auto scrollbar-none mb-4" role="tablist" aria-label="Catégories à commander"></div>
+          <div id="pickList" class="grid gap-2.5" aria-live="polite"></div>
+        </fieldset>
+
+        <!-- step 3 -->
+        <fieldset class="glass glow rounded-3xl p-5 sm:p-7 reveal">
+          <legend class="sr-only">Date et créneau</legend>
+          <div class="flex items-center gap-3 mb-5"><span class="grid place-items-center w-8 h-8 rounded-full bg-fire-500 font-display text-lg">3</span><h3 class="font-display uppercase text-2xl tracking-wide">Date & créneau</h3></div>
+          <div class="grid sm:grid-cols-[220px_1fr] gap-5">
+            <div>
+              <label for="date" class="block text-sm font-bold mb-2">Date souhaitée <span class="text-fire-400">*</span></label>
+              <input type="date" id="date" name="date" class="field w-full px-4 py-3.5" required>
+              <p id="dayInfo" class="mt-2 text-xs text-cream/55"></p>
+            </div>
+            <div>
+              <p class="block text-sm font-bold mb-2" id="slotLbl">Créneau horaire <span class="text-fire-400">*</span></p>
+              <div id="slots" class="slot grid grid-cols-3 sm:grid-cols-5 gap-2 max-h-[208px] overflow-y-auto pr-1" role="radiogroup" aria-labelledby="slotLbl"></div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- step 4 -->
+        <fieldset class="glass glow rounded-3xl p-5 sm:p-7 reveal">
+          <legend class="sr-only">Vos coordonnées</legend>
+          <div class="flex items-center gap-3 mb-5"><span class="grid place-items-center w-8 h-8 rounded-full bg-fire-500 font-display text-lg">4</span><h3 class="font-display uppercase text-2xl tracking-wide">Vos coordonnées</h3></div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div><label for="nom" class="block text-sm font-bold mb-2">Nom <span class="text-fire-400">*</span></label><input id="nom" name="nom" class="field w-full px-4 py-3.5" autocomplete="family-name" required></div>
+            <div><label for="prenom" class="block text-sm font-bold mb-2">Prénom <span class="text-fire-400">*</span></label><input id="prenom" name="prenom" class="field w-full px-4 py-3.5" autocomplete="given-name" required></div>
+            <div><label for="tel" class="block text-sm font-bold mb-2">Téléphone <span class="text-fire-400">*</span></label><input id="tel" name="tel" type="tel" inputmode="tel" class="field w-full px-4 py-3.5" placeholder="06 12 34 56 78" autocomplete="tel" required></div>
+            <div><label for="note" class="block text-sm font-bold mb-2">Précisions</label><input id="note" name="note" class="field w-full px-4 py-3.5" placeholder="Sans oignons, sauce à part…"></div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- recap -->
+      <aside class="lg:sticky lg:top-24 glass rounded-3xl p-6 overflow-hidden" aria-labelledby="recapTitle">
+        <div class="absolute -top-24 -right-20 w-60 h-60 rounded-full bg-fire-500/25 blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <h3 id="recapTitle" class="font-display uppercase text-3xl">Ma commande</h3>
+            <span id="recapType" class="text-xs font-bold uppercase tracking-wider rounded-full bg-white/5 border border-white/10 px-3 py-1">À emporter</span>
+          </div>
+          <div id="recapList" class="mt-5 grid gap-3 text-sm min-h-[90px]" aria-live="polite"></div>
+          <div class="mt-5 pt-5 border-t border-dashed border-white/15 grid gap-2 text-sm">
+            <div class="flex justify-between text-cream/60"><span>Créneau</span><span id="recapSlot" class="font-semibold text-cream">—</span></div>
+            <div class="flex justify-between items-end mt-2"><span class="font-bold">Total estimé</span><span id="recapTotal" class="font-display text-4xl text-fire">0,00 €</span></div>
+          </div>
+          <p id="formErr" class="hidden mt-4 text-sm font-semibold text-[#ff8a7a] bg-[#ff5a4a]/10 border border-[#ff5a4a]/30 rounded-xl px-3 py-2" role="alert"></p>
+          <button type="submit" class="btn-fire mt-5 w-full inline-flex items-center justify-center gap-2.5 rounded-2xl py-4 text-base font-extrabold">
+            <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+            Valider ma commande
+          </button>
+          <p class="mt-3 text-[11px] text-cream/45 text-center leading-relaxed">Vous serez redirigé vers WhatsApp avec le récapitulatif prêt à envoyer. Paiement sur place ou à la livraison.</p>
+        </div>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<!-- ========== AVIS ========== -->
+<section id="avis" class="relative py-24 sm:py-32 overflow-hidden" aria-labelledby="avisTitle">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-12 items-center">
+      <div class="reveal min-w-0">
+        <p class="font-hand text-3xl text-amber-400 -rotate-2 mb-3">la maison, c'est vous</p>
+        <h2 id="avisTitle" class="font-display uppercase text-[clamp(2.6rem,6vw,4.8rem)]">Généreux, rapide, <span class="text-fire">convivial.</span></h2>
+        <div class="mt-8 glass rounded-3xl p-6 inline-flex items-center gap-5">
+          <div class="font-display text-7xl text-fire leading-none">3,8</div>
+          <div>
+            <div class="flex gap-1" aria-label="Note de 3,8 sur 5">
+              <svg viewBox="0 0 24 24" class="w-5 h-5 text-amber-400" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 .7-5.3 4.8 1.6 7L12 17.5 5.7 21l1.6-7L2 9.3l7-.7Z"/></svg>
+              <svg viewBox="0 0 24 24" class="w-5 h-5 text-amber-400" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 .7-5.3 4.8 1.6 7L12 17.5 5.7 21l1.6-7L2 9.3l7-.7Z"/></svg>
+              <svg viewBox="0 0 24 24" class="w-5 h-5 text-amber-400" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 .7-5.3 4.8 1.6 7L12 17.5 5.7 21l1.6-7L2 9.3l7-.7Z"/></svg>
+              <svg viewBox="0 0 24 24" class="w-5 h-5" aria-hidden="true"><defs><linearGradient id="hs"><stop offset="80%" stop-color="#ffab3d"/><stop offset="80%" stop-color="#3b332c"/></linearGradient></defs><path fill="url(#hs)" d="m12 2 3 6.6 7 .7-5.3 4.8 1.6 7L12 17.5 5.7 21l1.6-7L2 9.3l7-.7Z"/></svg>
+              <svg viewBox="0 0 24 24" class="w-5 h-5 text-[#3b332c]" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 .7-5.3 4.8 1.6 7L12 17.5 5.7 21l1.6-7L2 9.3l7-.7Z"/></svg>
+            </div>
+            <p class="mt-1.5 text-sm text-cream/60 font-semibold">Sur 365 avis Google</p>
+            <a class="mt-2 inline-flex text-sm font-bold text-amber-300 hover:text-amber-400 underline-offset-4 hover:underline" href="https://www.google.com/maps/search/?api=1&query=Kifolie+112+Boulevard+de+Belleville+75020+Paris" target="_blank" rel="noopener">Lire et laisser un avis →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative reveal min-w-0" aria-roledescription="carrousel" aria-label="Ce qui fait Kifolie">
+        <div class="overflow-hidden rounded-3xl">
+          <div id="revTrack" class="flex"></div>
+        </div>
+        <div class="mt-6 flex items-center justify-between">
+          <div id="revDots" class="flex gap-2"></div>
+          <div class="flex gap-2">
+            <button id="revPrev" class="btn-ghost grid place-items-center w-12 h-12 rounded-full" aria-label="Précédent"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button id="revNext" class="btn-ghost grid place-items-center w-12 h-12 rounded-full" aria-label="Suivant"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="relative py-24 sm:py-32" aria-labelledby="contactTitle">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="mb-12 reveal">
+      <p class="font-hand text-3xl text-amber-400 -rotate-2 mb-3">on vous attend</p>
+      <h2 id="contactTitle" class="font-display uppercase text-[clamp(2.6rem,6vw,5rem)]">Contact <span class="text-fire">&</span> accès</h2>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-7 glass rounded-3xl p-2 min-h-[380px] reveal overflow-hidden">
+        <iframe title="Carte : Kifolie, 112 Boulevard de Belleville, 75020 Paris" class="w-full h-full min-h-[380px] rounded-[20px] grayscale-[.6] invert-[.92] hue-rotate-180 contrast-[.9]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=112%20Boulevard%20de%20Belleville%2C%2075020%20Paris&z=16&output=embed"></iframe>
+      </div>
+      <div class="lg:col-span-5 grid gap-6">
+        <div class="glass glow rounded-3xl p-6 reveal">
+          <address class="not-italic grid gap-4">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=112+Boulevard+de+Belleville+75020+Paris" target="_blank" rel="noopener" class="group flex gap-4 items-start">
+              <span class="grid place-items-center w-11 h-11 rounded-xl bg-fire-500/15 text-fire-400 shrink-0 transition-transform group-hover:scale-110 group-hover:-rotate-6"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+              <span><span class="block font-extrabold group-hover:text-amber-300 transition-colors">112 Boulevard de Belleville</span><span class="text-sm text-cream/60">75020 Paris · Métro Belleville / Couronnes (L2)</span></span>
+            </a>
+            <a href="tel:+33147975313" class="group flex gap-4 items-start">
+              <span class="grid place-items-center w-11 h-11 rounded-xl bg-fire-500/15 text-fire-400 shrink-0 transition-transform group-hover:scale-110 group-hover:-rotate-6"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+              <span><span class="block font-extrabold group-hover:text-amber-300 transition-colors">01 47 97 53 13</span><span class="text-sm text-cream/60">Appelez-nous, on décroche vite</span></span>
+            </a>
+          </address>
+          <h3 class="mt-7 mb-3 text-xs font-bold uppercase tracking-[.2em] text-gold-300">Horaires</h3>
+          <table class="w-full text-sm" id="hoursTable">
+            <caption class="sr-only">Horaires d'ouverture</caption>
+            <tbody></tbody>
+          </table>
+        </div>
+        <form id="contactForm" class="glass glow rounded-3xl p-6 grid gap-3 reveal" novalidate>
+          <h3 class="font-display uppercase text-2xl tracking-wide">Un message direct</h3>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="sr-only" for="cName">Votre nom</label><input id="cName" class="field px-4 py-3" placeholder="Votre nom" autocomplete="name" required>
+            <label class="sr-only" for="cTel">Votre téléphone</label><input id="cTel" type="tel" inputmode="tel" class="field px-4 py-3" placeholder="Téléphone" autocomplete="tel" required>
+          </div>
+          <label class="sr-only" for="cMsg">Votre message</label>
+          <textarea id="cMsg" rows="3" class="field px-4 py-3 resize-none" placeholder="Événement, commande groupée, question…" required></textarea>
+          <p id="cErr" class="hidden text-sm font-semibold text-[#ff8a7a]" role="alert"></p>
+          <button class="btn-ghost rounded-2xl py-3.5 font-extrabold inline-flex justify-center items-center gap-2">Envoyer via WhatsApp <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="border-t border-white/5 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream/50">
+    <p><span class="font-display text-xl text-cream tracking-wide mr-2">KIFOLIE</span> Restaurant tunisien · 112 Bd de Belleville, 75020 Paris</p>
+    <p>© <span id="yr"></span> Kifolie · <a class="hover:text-amber-300" href="tel:+33147975313">01 47 97 53 13</a></p>
+  </div>
+</footer>
+
+<!-- mobile sticky CTA -->
+<a href="#commander" id="mobCta" class="btn-fire sm:hidden fixed bottom-4 inset-x-4 z-40 rounded-2xl py-4 text-center font-extrabold transition-transform duration-300">Commander en ligne · <span id="mobCount">0</span> article(s)</a>
+
+<div id="toast" class="fixed z-[70] left-1/2 bottom-24 sm:bottom-8 -translate-x-1/2 translate-y-6 opacity-0 pointer-events-none glass rounded-full px-5 py-3 text-sm font-bold flex items-center gap-2" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  const WA = '33766338472';
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(pointer: fine)').matches;
+  const U = (id, w = 700) => `https://images.unsplash.com/photo-${id}?w=${w}&q=72&auto=format&fit=crop`;
+  const eur = n => n.toFixed(2).replace('.', ',') + ' €';
+  const $ = s => document.querySelector(s);
+
+  /* ---------- DATA ---------- */
+  const CATS = [
+    { id: 'sandwich', label: 'Sandwiches & Spécialités', short: 'Sandwiches', ico: 'M3 10c0-3 4-5 9-5s9 2 9 5H3Zm0 3h18M4 16h16a2 2 0 0 1-2 3H6a2 2 0 0 1-2-3Z' },
+    { id: 'burger', label: 'Burgers & Formules', short: 'Burgers', ico: 'M4 11a8 6 0 0 1 16 0H4Zm-1 3h18M4 17h16v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1Z' },
+    { id: 'assiette', label: 'Assiettes & Grillades', short: 'Grillades', ico: 'M3 13a9 9 0 0 0 18 0H3Zm5-9c0 2 2 2 2 4M12 3c0 2 2 2 2 4M16 4c0 2 2 2 2 4' },
+    { id: 'dessert', label: 'Desserts & Rafraîchissements', short: 'Desserts', ico: 'M7 10a5 5 0 0 1 10 0H7Zm-1 0h12l-6 11-6-11Z' }
+  ];
+  const MENU = [
+    { id: 's1', cat: 'sandwich', name: 'Le Kif Shawarma', desc: 'Pita chaude, poulet mariné 24 h, crudités, tahiné & harissa maison.', price: 11.5, img: '1529006557810-274b9b2fc783', tag: 'Best-seller' },
+    { id: 's2', cat: 'sandwich', name: 'Baguette Merguez', desc: 'Baguette croustillante, merguez grillées, frites dedans, sauce samouraï.', price: 10.9, img: '1619740455993-9e612b1af08a' },
+    { id: 's3', cat: 'sandwich', name: 'Laffa Kebab', desc: 'Grande laffa roulée, kebab de bœuf, houmous, oignons au sumac.', price: 13.5, img: '1626700051175-6818013e1d4f', tag: 'Généreux' },
+    { id: 's4', cat: 'sandwich', name: 'Pulled Chicken', desc: 'Poulet effiloché fumé, chou croquant, pickles, sauce barbecue maison.', price: 11.9, img: '1606755962773-d324e0a13086' },
+    { id: 'b1', cat: 'burger', name: 'Le Belleville', desc: 'Double steak haché 2×120 g, oignons confits, sauce secrète, pain brioché.', price: 14.9, img: '1568901346375-23c9450c58cd', tag: 'Signature' },
+    { id: 'b2', cat: 'burger', name: 'Le Classic', desc: 'Steak haché 150 g, tomate, oignon rouge, salade, sauce burger maison.', price: 12.9, img: '1550547660-d9450f859349' },
+    { id: 'b3', cat: 'burger', name: 'Formule Express', desc: 'Un burger ou un sandwich + frites croustillantes + boisson 33 cl.', price: 15.9, img: '1561758033-d89a9ad46330', tag: 'Formule' },
+    { id: 'b4', cat: 'burger', name: 'Barquette de frites', desc: 'Frites fraîches double cuisson, sel fumé.', price: 4.5, img: '1573080496219-bb080dd4f877' },
+    { id: 'a1', cat: 'assiette', name: 'Assiette Mixte Grill', desc: 'Brochettes de poulet & bœuf, merguez, riz, frites, salade israélienne.', price: 19.9, img: '1555939594-58d7cb561ad1', tag: 'À partager' },
+    { id: 'a2', cat: 'assiette', name: 'Travers de bœuf BBQ', desc: 'Travers de bœuf laqués, fumés lentement, frites et salade de tomates.', price: 16.9, img: '1544025162-d76694265947' },
+    { id: 'a3', cat: 'assiette', name: 'Côte d’entrecôte', desc: 'Entrecôte grillée minute, frites, sauce chimichurri.', price: 24.9, img: '1558030006-450675393462' },
+    { id: 'd1', cat: 'dessert', name: 'Brownie fondant', desc: 'Chocolat noir, cœur coulant, éclats de noix de pécan (parvé).', price: 4.9, img: '1606313564200-e75d5e30476c' },
+    { id: 'd2', cat: 'dessert', name: 'Panna cotta fraise', desc: 'Crème vanille parvé, coulis et fraises fraîches.', price: 4.5, img: '1488477181946-6428a0291777' },
+    { id: 'd3', cat: 'dessert', name: 'Citronnade maison', desc: 'Citron pressé, menthe fraîche, glace pilée. 40 cl.', price: 4.5, img: '1621263764928-df1444c5e859', drink: true },
+    { id: 'd4', cat: 'dessert', name: 'Soda 33 cl', desc: 'Coca-Cola, Coca Zéro, Fanta, Sprite, Ice Tea.', price: 2.5, img: '1622483767028-3f66f32aef97', drink: true },
+    { id: 'd5', cat: 'dessert', name: 'Eau minérale 50 cl', desc: 'Plate ou gazeuse.', price: 2, img: '1548839140-29a749e1cf4d', drink: true }
+  ];
+  const PICK_CATS = [...CATS.slice(0, 3), { id: 'dessertOnly', short: 'Desserts' }, { id: 'drinks', short: 'Boissons' }];
+  const inPick = (cid, m) => cid === 'dessertOnly' ? (m.cat === 'dessert' && !m.drink) : cid === 'drinks' ? !!m.drink : m.cat === cid;
+
+  // hours: 0=Sun … 6=Sat, minutes
+  const HOURS = { 0: [600, 1350], 1: [600, 1320], 2: [600, 1320], 3: [600, 1320], 4: [600, 1320], 5: [600, 900], 6: null };
+  const DAYS = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+  const hm = m => `${String(Math.floor(m / 60)).padStart(2, '0')}h${String(m % 60).padStart(2, '0')}`;
+  // Paris time regardless of visitor timezone
+  const parisNow = () => { const d = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Paris' })); return d; };
+
+  /* ---------- CART ---------- */
+  const cart = {};
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem('kifolie-cart') || 'null'); } catch (e) {}
+  if (saved) Object.entries(saved).forEach(([k, v]) => { if (MENU.find(m => m.id === k) && v > 0) cart[k] = v; });
+  const persist = () => { try { localStorage.setItem('kifolie-cart', JSON.stringify(cart)); } catch (e) {} };
+
+  /* ---------- TOAST ---------- */
+  let tt;
+  const toast = msg => {
+    const t = $('#toast');
+    t.innerHTML = `<span class="grid place-items-center w-6 h-6 rounded-full bg-fire-500"><svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span>${msg}`;
+    t.style.opacity = 1; t.style.transform = 'translate(-50%,0)';
+    clearTimeout(tt); tt = setTimeout(() => { t.style.opacity = 0; t.style.transform = 'translate(-50%,24px)'; }, 2200);
+  };
+
+  /* ---------- MENU TABS ---------- */
+  const tabsEl = $('#tabs'), grid = $('#menuGrid');
+  tabsEl.innerHTML = `<span id="tabInk" class="absolute top-1.5 bottom-1.5 left-0 rounded-xl bg-gradient-to-br from-fire-500 to-[#ff7a1f] shadow-[0_8px_24px_-8px_rgba(255,77,31,.9)]" aria-hidden="true"></span>` +
+    CATS.map((c, i) => `<button role="tab" id="tab-${c.id}" aria-controls="menuGrid" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-cat="${c.id}" class="tab relative z-10 shrink-0 inline-flex items-center gap-2 rounded-xl px-4 sm:px-5 py-3 text-sm font-extrabold text-cream/65 whitespace-nowrap">
+      <svg viewBox="0 0 24 24" class="tab-ico w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="${c.ico}"/></svg>
+      <span class="sm:hidden">${c.short}</span><span class="hidden sm:inline">${c.label}</span></button>`).join('');
+  const ink = $('#tabInk');
+  const moveInk = btn => { ink.style.width = btn.offsetWidth + 'px'; ink.style.transform = `translateX(${btn.offsetLeft}px)`; };
+
+  const renderMenu = cat => {
+    grid.setAttribute('aria-labelledby', 'tab-' + cat);
+    grid.innerHTML = MENU.filter(m => m.cat === cat).map((m, i) => `
+      <article class="tilt glass rounded-[26px] p-3 relative card-in" style="animation-delay:${i * 70}ms">
+        <span class="shine" aria-hidden="true"></span>
+        <div class="dish-img relative rounded-[20px] overflow-hidden aspect-[4/3] pop-sm">
+          <img src="${U(m.img)}" alt="${m.name}" loading="lazy" class="w-full h-full object-cover" onerror="this.remove()">
+          <div class="absolute inset-0 bg-gradient-to-t from-coal-950/80 via-transparent to-transparent"></div>
+          ${m.tag ? `<span class="absolute top-3 left-3 rounded-full bg-fire-500 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider shadow-lg">${m.tag}</span>` : ''}
+          <span class="absolute bottom-3 right-3 font-display text-3xl text-white drop-shadow-[0_4px_12px_rgba(0,0,0,.6)]">${eur(m.price)}</span>
+        </div>
+        <div class="p-3 pt-4 pop">
+          <h3 class="font-display uppercase text-2xl tracking-wide">${m.name}</h3>
+          <p class="mt-1.5 text-sm text-cream/60 leading-relaxed min-h-[40px]">${m.desc}</p>
+          <button type="button" data-add="${m.id}" class="mt-4 w-full btn-ghost rounded-xl py-3 text-sm font-extrabold inline-flex items-center justify-center gap-2 group/add">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform duration-300 group-hover/add:rotate-90" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            Ajouter à ma commande
+          </button>
+        </div>
+      </article>`).join('');
+    bindTilt(grid.querySelectorAll('.tilt'));
+  };
+  const selectTab = (btn, user = true) => {
+    tabsEl.querySelectorAll('[role=tab]').forEach(b => { const on = b === btn; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; });
+    moveInk(btn); renderMenu(btn.dataset.cat);
+    if (user) tabsEl.scrollTo({ left: btn.offsetLeft - 12, behavior: reduce ? 'auto' : 'smooth' });
+  };
+  tabsEl.addEventListener('click', e => { const b = e.target.closest('[role=tab]'); if (b) selectTab(b); });
+  tabsEl.addEventListener('keydown', e => {
+    const tabs = [...tabsEl.querySelectorAll('[role=tab]')], i = tabs.indexOf(document.activeElement);
+    if (i < 0) return;
+    let n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null;
+    if (n === null) return; e.preventDefault(); n = (n + tabs.length) % tabs.length; tabs[n].focus(); selectTab(tabs[n]);
+  });
+  grid.addEventListener('click', e => {
+    const b = e.target.closest('[data-add]'); if (!b) return;
+    const m = MENU.find(x => x.id === b.dataset.add);
+    cart[m.id] = (cart[m.id] || 0) + 1; updateCart(); toast(`${m.name} ajouté`);
+    b.animate([{ transform: 'scale(1)' }, { transform: 'scale(.94)' }, { transform: 'scale(1)' }], { duration: 260 });
+  });
+
+  /* ---------- 3D TILT ---------- */
+  function bindTilt(nodes) {
+    if (!fine || reduce) return;
+    nodes.forEach(el => {
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        el.classList.add('is-tilting');
+        el.style.setProperty('--ry', ((x - .5) * 14).toFixed(2) + 'deg');
+        el.style.setProperty('--rx', ((.5 - y) * 12).toFixed(2) + 'deg');
+        el.style.setProperty('--gx', x * 100 + '%'); el.style.setProperty('--gy', y * 100 + '%');
+      });
+      el.addEventListener('pointerleave', () => { el.classList.remove('is-tilting'); el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+    });
+  }
+  document.querySelectorAll('.glow').forEach(el => el.addEventListener('pointermove', e => {
+    const r = el.getBoundingClientRect(); el.style.setProperty('--gx', e.clientX - r.left + 'px'); el.style.setProperty('--gy', e.clientY - r.top + 'px');
+  }));
+
+  /* ---------- ORDER PICKER ---------- */
+  const pickTabs = $('#pickTabs'), pickList = $('#pickList');
+  let pickCat = 'sandwich';
+  const renderPickTabs = () => {
+    pickTabs.innerHTML = PICK_CATS.map(c => {
+      const n = MENU.filter(m => inPick(c.id, m)).reduce((s, m) => s + (cart[m.id] || 0), 0);
+      const on = c.id === pickCat;
+      return `<button type="button" role="tab" aria-selected="${on}" data-pc="${c.id}" class="shrink-0 rounded-full px-4 py-2 text-sm font-bold border transition-all ${on ? 'bg-cream text-coal-950 border-cream' : 'border-white/12 text-cream/70 hover:border-amber-400/60 hover:text-white'}">${c.short}${n ? ` <span class="ml-1 inline-grid place-items-center min-w-[20px] h-5 px-1 rounded-full bg-fire-500 text-white text-[11px]">${n}</span>` : ''}</button>`;
+    }).join('');
+  };
+  const renderPick = () => {
+    pickList.innerHTML = MENU.filter(m => inPick(pickCat, m)).map(m => {
+      const q = cart[m.id] || 0;
+      return `<div class="pick-row ${q ? 'has' : ''} flex items-center gap-3 rounded-2xl border border-white/8 p-2.5 pr-3">
+        <div class="dish-img w-14 h-14 rounded-xl overflow-hidden shrink-0"><img src="${U(m.img, 160)}" alt="" loading="lazy" class="w-full h-full object-cover" onerror="this.remove()"></div>
+        <div class="min-w-0 flex-1"><p class="font-extrabold truncate">${m.name}</p><p class="text-sm text-amber-300 font-bold">${eur(m.price)}</p></div>
+        <div class="qty flex items-center gap-1 rounded-full bg-white/5 border border-white/10 p-1">
+          <button type="button" data-q="${m.id}" data-d="-1" class="grid place-items-center w-9 h-9 rounded-full disabled:opacity-30" aria-label="Retirer un ${m.name}" ${q ? '' : 'disabled'}><svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+          <span class="w-6 text-center font-display text-lg" aria-label="Quantité">${q}</span>
+          <button type="button" data-q="${m.id}" data-d="1" class="grid place-items-center w-9 h-9 rounded-full bg-fire-500/90" aria-label="Ajouter un ${m.name}"><svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+        </div></div>`;
+    }).join('');
+  };
+  pickTabs.addEventListener('click', e => { const b = e.target.closest('[data-pc]'); if (!b) return; pickCat = b.dataset.pc; renderPickTabs(); renderPick(); });
+  pickList.addEventListener('click', e => {
+    const b = e.target.closest('[data-q]'); if (!b) return;
+    const id = b.dataset.q, n = Math.max(0, (cart[id] || 0) + +b.dataset.d);
+    if (n) cart[id] = n; else delete cart[id];
+    updateCart();
+  });
+  $('#recapList').addEventListener('click', e => { const b = e.target.closest('[data-del]'); if (b) { delete cart[b.dataset.del]; updateCart(); } });
+
+  function updateCart() {
+    persist(); renderPickTabs(); renderPick();
+    const lines = Object.entries(cart).map(([id, q]) => ({ m: MENU.find(x => x.id === id), q }));
+    const total = lines.reduce((s, l) => s + l.m.price * l.q, 0), count = lines.reduce((s, l) => s + l.q, 0);
+    $('#recapList').innerHTML = lines.length ? lines.map(l => `
+      <div class="flex items-center gap-3"><span class="font-display text-lg text-amber-300 w-7">${l.q}×</span><span class="flex-1 font-semibold">${l.m.name}</span><span class="text-cream/70">${eur(l.m.price * l.q)}</span>
+      <button type="button" data-del="${l.m.id}" class="grid place-items-center w-7 h-7 rounded-full hover:bg-white/10 text-cream/50 hover:text-white" aria-label="Supprimer ${l.m.name}"><svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>`).join('')
+      : `<div class="grid place-items-center text-center py-4 text-cream/45"><svg viewBox="0 0 24 24" class="w-9 h-9 mb-2" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 8h12l-1 13H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Votre sac est vide.<br>Ajoutez un plat pour commencer.</div>`;
+    $('#recapTotal').textContent = eur(total);
+    $('#mobCount').textContent = count;
+  }
+
+  /* ---------- TYPE / DATE / SLOTS ---------- */
+  const form = $('#orderForm'), dateEl = $('#date'), slotsEl = $('#slots');
+  form.addEventListener('change', e => {
+    if (e.target.name === 'type') {
+      const liv = e.target.value === 'Livraison';
+      $('#addrWrap').classList.toggle('hidden', !liv); $('#recapType').textContent = e.target.value;
+    }
+    if (e.target.name === 'slot') $('#recapSlot').textContent = `${fmtDate(dateEl.value)} · ${e.target.value}`;
+  });
+  const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const fromIso = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+  const fmtDate = s => s ? fromIso(s).toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' }) : '—';
+  const renderSlots = () => {
+    $('#recapSlot').textContent = '—';
+    if (!dateEl.value) { slotsEl.innerHTML = ''; return; }
+    const d = fromIso(dateEl.value), h = HOURS[d.getDay()], now = parisNow();
+    if (!h) { $('#dayInfo').textContent = 'Fermé le samedi (Chabbat). Choisissez un autre jour.'; slotsEl.innerHTML = `<p class="col-span-full text-sm text-cream/55 py-3">Aucun créneau ce jour-là.</p>`; return; }
+    $('#dayInfo').textContent = `${DAYS[d.getDay()]} : ${hm(h[0])} – ${hm(h[1])}`;
+    const today = iso(now) === dateEl.value, nowMin = now.getHours() * 60 + now.getMinutes() + 30;
+    let html = '';
+    for (let m = h[0] + 30; m <= h[1] - 15; m += 15) {
+      const off = today && m < nowMin, v = hm(m);
+      html += `<div class="relative"><input type="radio" name="slot" id="sl${m}" value="${v}" ${off ? 'disabled' : ''}><label for="sl${m}" class="block text-center cursor-pointer rounded-xl border border-white/10 py-2.5 text-sm font-bold hover:border-amber-400/60">${v}</label></div>`;
+    }
+    slotsEl.innerHTML = html;
+    if (!slotsEl.querySelector('input:not(:disabled)')) slotsEl.insertAdjacentHTML('afterbegin', `<p class="col-span-full text-sm text-cream/55 pb-1">Plus de créneau aujourd'hui, choisissez un autre jour.</p>`);
+  };
+  dateEl.addEventListener('change', renderSlots);
+  (() => {
+    const now = parisNow(), d = new Date(now);
+    const max = new Date(now); max.setDate(max.getDate() + 14);
+    dateEl.min = iso(now); dateEl.max = iso(max);
+    // first day with remaining slots
+    for (let i = 0; i < 8; i++) {
+      const h = HOURS[d.getDay()], last = h ? h[1] - 15 : -1;
+      if (h && (i > 0 || last >= now.getHours() * 60 + now.getMinutes() + 30)) break;
+      d.setDate(d.getDate() + 1);
+    }
+    dateEl.value = iso(d); renderSlots();
+  })();
+
+  /* ---------- SUBMIT → WHATSAPP ---------- */
+  const setInvalid = (el, bad) => el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const err = $('#formErr'), errs = [];
+    const type = form.type.value, liv = type === 'Livraison';
+    const f = id => $('#' + id).value.trim();
+    const lines = Object.entries(cart).map(([id, q]) => ({ m: MENU.find(x => x.id === id), q }));
+    if (!lines.length) errs.push('ajoutez au moins un plat ou une boisson');
+    const slot = form.querySelector('input[name=slot]:checked');
+    if (!slot) errs.push('choisissez un créneau');
+    [['nom', 'votre nom'], ['prenom', 'votre prénom']].forEach(([id, l]) => { const bad = !f(id); setInvalid($('#' + id), bad); if (bad) errs.push(l); });
+    const telBad = f('tel').replace(/[^\d+]/g, '').length < 10; setInvalid($('#tel'), telBad); if (telBad) errs.push('un téléphone valide');
+    if (liv) { const bad = f('addr').length < 6; setInvalid($('#addr'), bad); if (bad) errs.push("l'adresse de livraison"); }
+    if (errs.length) {
+      err.textContent = 'Il manque : ' + errs.join(', ') + '.'; err.classList.remove('hidden');
+      const first = form.querySelector('[aria-invalid=true]'); if (first) first.focus();
+      return;
+    }
+    err.classList.add('hidden');
+    const total = lines.reduce((s, l) => s + l.m.price * l.q, 0);
+    const food = lines.filter(l => !l.m.drink), drinks = lines.filter(l => l.m.drink);
+    const li = l => `• ${l.q} × ${l.m.name} (${eur(l.m.price * l.q)})`;
+    const msg = [
+      '*NOUVELLE COMMANDE KIFOLIE*', '',
+      `*Type :* ${type}`,
+      liv ? `*Adresse :* ${f('addr')}` : '*Retrait :* 112 Bd de Belleville, 75020 Paris',
+      `*Date :* ${fmtDate(dateEl.value)} à ${slot.value}`, '',
+      '*Plats :*', ...(food.length ? food.map(li) : ['• —']), '',
+      '*Boissons :*', ...(drinks.length ? drinks.map(li) : ['• —']), '',
+      `*Total estimé :* ${eur(total)}`,
+      f('note') ? `*Précisions :* ${f('note')}` : null, '',
+      `*Client :* ${f('prenom')} ${f('nom')}`,
+      `*Téléphone :* ${f('tel')}`
+    ].filter(x => x !== null).join('\n');
+    window.location.href = `https://api.whatsapp.com/send?phone=${WA}&text=${encodeURIComponent(msg)}`;
+  });
+
+  $('#contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const n = $('#cName').value.trim(), t = $('#cTel').value.trim(), m = $('#cMsg').value.trim();
+    setInvalid($('#cName'), !n); setInvalid($('#cTel'), t.replace(/\D/g, '').length < 10); setInvalid($('#cMsg'), !m);
+    if (!n || !m || t.replace(/\D/g, '').length < 10) { $('#cErr').textContent = 'Merci de remplir nom, téléphone et message.'; $('#cErr').classList.remove('hidden'); return; }
+    $('#cErr').classList.add('hidden');
+    window.location.href = `https://api.whatsapp.com/send?phone=${WA}&text=${encodeURIComponent(`*Message depuis le site Kifolie*\n\n${m}\n\n— ${n} · ${t}`)}`;
+  });
+
+  /* ---------- HOURS ---------- */
+  const order = [1, 2, 3, 4, 5, 6, 0], today = parisNow().getDay();
+  $('#hoursTable tbody').innerHTML = order.map(d => `<tr class="${d === today ? 'text-amber-300 font-extrabold' : 'text-cream/75'}">
+    <th scope="row" class="text-left font-semibold py-1.5">${DAYS[d]}${d === today ? ' <span class="text-[10px] uppercase tracking-wider bg-fire-500/20 text-fire-400 rounded px-1.5 py-0.5 ml-1">Aujourd’hui</span>' : ''}</th>
+    <td class="text-right py-1.5 tabular-nums">${HOURS[d] ? `${hm(HOURS[d][0])} – ${hm(HOURS[d][1])}` : '<span class="text-cream/40">Fermé</span>'}</td></tr>`).join('');
+  (() => {
+    const now = parisNow(), d = now.getDay(), m = now.getHours() * 60 + now.getMinutes(), h = HOURS[d];
+    const open = h && m >= h[0] && m < h[1];
+    if (open) $('#openText').textContent = `Ouvert maintenant · jusqu'à ${hm(h[1])}`;
+    else {
+      let i = 0, nd; do { i++; nd = (d + i) % 7; } while (!HOURS[nd] && i < 7);
+      const nextToday = h && m < h[0];
+      $('#openText').textContent = nextToday ? `Fermé · ouvre à ${hm(h[0])}` : `Fermé · réouverture ${i === 1 ? 'demain' : DAYS[nd].toLowerCase()} ${hm(HOURS[nd][0])}`;
+      $('#openDot').innerHTML = '<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-fire-500"></span>';
+    }
+  })();
+
+  /* ---------- REVIEWS CAROUSEL (thèmes, pas de faux avis) ---------- */
+  const REV = [
+    { k: 'Les portions', t: 'On ne fait pas semblant.', d: 'Laffa pleine à craquer, assiettes qui débordent : ici, personne ne repart avec un petit creux. C’est ce qui revient le plus souvent dans vos avis.', img: '1626700051175-6818013e1d4f' },
+    { k: 'Le service', t: 'Commandé, grillé, servi.', d: 'Pause déj’ entre deux rendez-vous ou faim de minuit moins le quart : la plaque tourne et votre sandwich arrive chaud en quelques minutes.', img: '1555939594-58d7cb561ad1' },
+    { k: 'L’accueil', t: 'Comme à la maison, à Belleville.', d: 'Les habitués ont leur sauce, les nouveaux repartent avec un conseil. Une adresse de quartier, conviviale, où l’on se sent attendu.', img: '1544025162-d76694265947' },
+    { k: 'Le casher', t: 'Gourmand et 100 % casher.', d: 'Viandes certifiées, desserts parvé : vous pouvez venir en famille et tout commander les yeux fermés.', img: '1568901346375-23c9450c58cd' }
+  ];
+  const track = $('#revTrack'), dots = $('#revDots');
+  track.innerHTML = REV.map((r, i) => `<div class="min-w-full" role="group" aria-roledescription="diapositive" aria-label="${i + 1} sur ${REV.length}">
+    <div class="relative glass rounded-3xl overflow-hidden grid sm:grid-cols-[1fr_1.1fr] min-h-[340px]">
+      <div class="dish-img relative min-h-[200px]"><img src="${U(r.img, 800)}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()"><div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent to-coal-900/90"></div></div>
+      <div class="p-7 sm:p-9 flex flex-col justify-center">
+        <p class="text-xs font-bold uppercase tracking-[.25em] text-gold-300">${r.k}</p>
+        <p class="font-display uppercase text-4xl mt-3 leading-[.95]">${r.t}</p>
+        <p class="mt-4 text-cream/65 leading-relaxed">${r.d}</p>
+      </div>
+    </div></div>`).join('');
+  dots.innerHTML = REV.map((_, i) => `<button class="dot h-2.5 rounded-full ${i ? 'w-2.5 bg-white/20' : 'w-8 bg-fire-500'}" aria-label="Aller à la diapositive ${i + 1}" data-i="${i}"></button>`).join('');
+  let ri = 0, rt;
+  const go = i => {
+    ri = (i + REV.length) % REV.length; track.style.transform = `translateX(-${ri * 100}%)`;
+    dots.querySelectorAll('.dot').forEach((d, j) => { d.className = `dot h-2.5 rounded-full ${j === ri ? 'w-8 bg-fire-500' : 'w-2.5 bg-white/20'}`; d.setAttribute('aria-current', j === ri); });
+  };
+  const auto = () => { clearInterval(rt); if (!reduce) rt = setInterval(() => go(ri + 1), 5500); };
+  $('#revPrev').onclick = () => { go(ri - 1); auto(); };
+  $('#revNext').onclick = () => { go(ri + 1); auto(); };
+  dots.onclick = e => { const b = e.target.closest('.dot'); if (b) { go(+b.dataset.i); auto(); } };
+  track.parentElement.addEventListener('mouseenter', () => clearInterval(rt));
+  track.parentElement.addEventListener('mouseleave', auto);
+  let sx = null;
+  track.addEventListener('touchstart', e => sx = e.touches[0].clientX, { passive: true });
+  track.addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) { go(ri + (dx < 0 ? 1 : -1)); auto(); } sx = null; });
+  auto();
+
+  /* ---------- HEADER / NAV / SCROLLSPY ---------- */
+  const hdr = $('#hdr'), burger = $('#burger'), mnav = $('#mnav');
+  burger.onclick = () => { const o = mnav.classList.toggle('hidden') === false; burger.setAttribute('aria-expanded', o); };
+  mnav.addEventListener('click', e => { if (e.target.closest('a')) { mnav.classList.add('hidden'); burger.setAttribute('aria-expanded', false); } });
+  const links = [...document.querySelectorAll('.navlink')];
+  const spy = new IntersectionObserver(es => es.forEach(en => {
+    if (en.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['carte', 'commander', 'avis', 'contact'].forEach(id => spy.observe(document.getElementById(id)));
+
+  const rev = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); rev.unobserve(en.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => rev.observe(el));
+
+  /* ---------- PARALLAX ---------- */
+  const root = document.documentElement, layers = [...document.querySelectorAll('.layer')], strips = [...document.querySelectorAll('.strip-img')];
+  let mx = 0, my = 0, ticking = false;
+  const frame = () => {
+    ticking = false;
+    const y = scrollY; hdr.classList.toggle('scrolled', y > 20);
+    $('#mobCta').style.transform = y > innerHeight * .7 && y < document.getElementById('commander').offsetTop - 200 ? 'none' : 'translateY(140%)';
+    if (reduce) return;
+    root.style.setProperty('--sy', Math.min(y, innerHeight * 1.2)); root.style.setProperty('--mx', mx); root.style.setProperty('--my', my);
+    if (y < innerHeight * 1.2) layers.forEach(l => { const d = +l.dataset.depth; l.style.transform = `translate3d(${mx * d * 22}px, ${my * d * 18 - y * d * .18}px, 0)`; });
+    strips.forEach(s => { const r = s.parentElement.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) s.style.transform = `translate3d(0, ${(r.top + r.height / 2 - innerHeight / 2) * -+s.dataset.speed}px, 0)`; });
+  };
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', req, { passive: true }); addEventListener('resize', () => { req(); moveInk(tabsEl.querySelector('[aria-selected=true]')); });
+  if (fine) addEventListener('pointermove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; req(); }, { passive: true });
+
+  /* ---------- EMBERS ---------- */
+  const cv = $('#embers'), cx = cv.getContext('2d');
+  let W, H, P = [];
+  const size = () => { const r = cv.parentElement.getBoundingClientRect(); W = cv.width = r.width * devicePixelRatio; H = cv.height = r.height * devicePixelRatio; };
+  const spawn = () => ({ x: Math.random() * W, y: H + Math.random() * H * .3, r: (Math.random() * 2 + .6) * devicePixelRatio, vy: (Math.random() * .7 + .3) * devicePixelRatio, vx: (Math.random() - .5) * .4, a: Math.random() * .6 + .3, ph: Math.random() * 6 });
+  size(); addEventListener('resize', size);
+  if (!reduce) {
+    P = Array.from({ length: innerWidth < 640 ? 28 : 60 }, () => { const p = spawn(); p.y = Math.random() * H; return p; });
+    let visible = true;
+    new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(cv);
+    const tick = () => {
+      if (visible) {
+        cx.clearRect(0, 0, W, H);
+        P.forEach((p, i) => {
+          p.y -= p.vy; p.ph += .03; p.x += p.vx + Math.sin(p.ph) * .4;
+          if (p.y < -10) P[i] = spawn();
+          const g = cx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
+          g.addColorStop(0, `rgba(255,190,90,${p.a})`); g.addColorStop(.4, `rgba(255,90,30,${p.a * .5})`); g.addColorStop(1, 'rgba(255,60,20,0)');
+          cx.fillStyle = g; cx.beginPath(); cx.arc(p.x, p.y, p.r * 4, 0, 7); cx.fill();
+        });
+      }
+      requestAnimationFrame(tick);
+    };
+    tick();
+  }
+
+  /* ---------- INIT ---------- */
+  $('#yr').textContent = new Date().getFullYear();
+  selectTab(tabsEl.querySelector('[role=tab]'), false);
+  updateCart(); frame();
+  document.fonts && document.fonts.ready.then(() => moveInk(tabsEl.querySelector('[aria-selected=true]')));
+})();
+</script>
+</body>
+</html>
